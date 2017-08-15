@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using SQLite;
 using System.IO;
+using SampleSQLite.iOS;
 
+[assembly:Xamarin.Forms.Dependency(typeof(SqliteService))]
 namespace SampleSQLite.iOS
 {
     public class SqliteService : ISqlite
