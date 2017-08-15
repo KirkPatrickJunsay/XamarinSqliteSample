@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:SampleSQLite"
+             x:Class="SampleSQLite.MainPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="AUTO"/>
+            <RowDefinition Height="AUTO"/>
+            <RowDefinition Height="AUTO"/>
+            <RowDefinition Height="AUTO"/>
+            <RowDefinition Height="AUTO"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Entry Grid.Row="0" x:Name="entryName" Placeholder="Enter Name"></Entry>
+        <Button Grid.Row="1" x:Name="btnAdd" Text="ADD" Clicked="btnAdd_Clicked"/>
+        <Label Grid.Row="2" x:Name="Status"/>
+        <Button Grid.Row="3" x:Name="btnGetAll" Text="GET ALL" Clicked="btnGetAll_Clicked"/>
+        <Button Grid.Row="4" x:Name="btnDelete" Text="DELETE" Clicked="btnDelete_Clicked"/>
+        <ListView x:Name="lstView" Grid.Row="5" ItemSelected="lstView_ItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell Height="30">
+                        <StackLayout Padding="5">
+                            <Label Text="{Binding Name}" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+
+</ContentPage>
